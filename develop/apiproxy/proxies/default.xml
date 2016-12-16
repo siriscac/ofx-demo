@@ -36,12 +36,6 @@
       <Request/>
       <Response/>
     </Flow>
-    <Flow name="GET /TryConvertToDealingDate?Currency={Currency}&amp;UtcDateTime={UtcDateTime}&amp;System={System}">
-      <Condition>(proxy.pathsuffix MatchesPath &quot;/TryConvertToDealingDate?Currency={Currency}&UtcDateTime={UtcDateTime}&System={System}&quot;) and (request.verb = &quot;GET&quot;)</Condition>
-      <Description>Try Convert To Dealing Date In Sydney Time Zone Request</Description>
-      <Request/>
-      <Response/>
-    </Flow>
     <Flow name="GET /brand/{CountryCode}">
       <Condition>(proxy.pathsuffix MatchesPath &quot;/brand/{CountryCode}&quot;) and (request.verb = &quot;GET&quot;)</Condition>
       <Description>Get Brand By Country</Description>
