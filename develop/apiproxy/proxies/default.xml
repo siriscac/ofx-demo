@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<ProxyEndpoint name="default">
+  <Description>OzForex.RefData</Description>
+  <PreFlow name="PreFlow">
+    <Request/>
+    <Response/>
+  </PreFlow>
+  <Flows>
+    <Flow name="GET /AcquiredItems">
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/AcquiredItems&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+      <Description>Get Acquired Items</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+    <Flow name="GET /Countries">
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/Countries&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+      <Description>Countries</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+    <Flow name="GET /CountriesForRegistration?Brand={Brand}">
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/CountriesForRegistration?Brand={Brand}&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+      <Description>Countries Allowed For Registration</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+    <Flow name="GET /CountryStates?IsoCountryCode={IsoCountryCode}">
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/CountryStates?IsoCountryCode={IsoCountryCode}&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+      <Description>CountryStates</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+    <Flow name="GET /Currencies">
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/Currencies&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+      <Description>Currencies Request</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+    <Flow name="GET /NearestDealingDate?InitialUtcDateTime={InitialUtcDateTime}&amp;Currency={Currency}&amp;System={System}">
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/NearestDealingDate?InitialUtcDateTime={InitialUtcDateTime}&Currency={Currency}&System={System}&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+      <Description>Nearest Dealing Date In Sydney Time Zone Request</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+    <Flow name="GET /SecurityQuestions">
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/SecurityQuestions&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+      <Description>Get Security Questions</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+    <Flow name="GET /TradedCurrencies">
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/TradedCurrencies&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+      <Description>Traded Currencies Request</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+    <Flow name="GET /TryConvertToDealingDate?Currency={Currency}&amp;UtcDateTime={UtcDateTime}&amp;System={System}">
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/TryConvertToDealingDate?Currency={Currency}&UtcDateTime={UtcDateTime}&System={System}&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+      <Description>Try Convert To Dealing Date In Sydney Time Zone Request</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+    <Flow name="GET /brand/{CountryCode}">
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/brand/{CountryCode}&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+      <Description>Get Brand By Country</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+    <Flow name="GET /template/address/{Country}">
+      <Condition>(proxy.pathsuffix MatchesPath &quot;/template/address/{Country}&quot;) and (request.verb = &quot;GET&quot;)</Condition>
+      <Description>Get Fields for manual entry</Description>
+      <Request/>
+      <Response/>
+    </Flow>
+  </Flows>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <HTTPProxyConnection>
+    <BasePath>/develop</BasePath>
+    <VirtualHost>default</VirtualHost>
+    <VirtualHost>secure</VirtualHost>
+  </HTTPProxyConnection>
+  <RouteRule name="default">
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+</ProxyEndpoint>

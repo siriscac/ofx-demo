@@ -1,0 +1,2024 @@
+{
+  "basePath": "/RefData.ApiService",
+  "host": "api.ofx.com",
+  "info": {
+    "description": "The Reference Data is prerequisite global data which is meant to be used in the other services. This API is \nutilised by both the Deals API and the Quotes API as well as being externally available for consumption.\n\nAll Date Times in the BSL are defined as EPOCH times.  Unix time (also known as POSIX time or Epoch time) is a system for describing instants in time, defined as the number of seconds that have elapsed since 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970, not counting leap seconds.\nAll programming languages support this nativley.  A converter can be found here: http://www.epochconverter.com/",
+    "title": "OzForex.RefData",
+    "version": ""
+  },
+  "paths": {
+    "/AcquiredItems": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "Header",
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string",
+            "default" : "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "AcquiredItems": [
+                  {
+                    "ExternalId": "64552595-f6aa-4610-9a1c-9fe6670874d1",
+                    "ExtraInfoRequired": true,
+                    "Name": "Agent, advisor or business recommendation"
+                  },
+                  {
+                    "ExternalId": "26fb208c-4584-488a-a6f8-b6afc580115c",
+                    "ExtraInfoRequired": false,
+                    "Name": "I already have a personal/business account with you"
+                  },
+                  {
+                    "ExternalId": "5e5dd4b9-58a1-43d3-bbab-cf4d32b77dc4",
+                    "ExtraInfoRequired": false,
+                    "Name": "Internet search"
+                  },
+                  {
+                    "ExternalId": "f653d777-9fa1-4194-b175-5acab81e751e",
+                    "ExtraInfoRequired": false,
+                    "Name": "Newspaper"
+                  },
+                  {
+                    "ExternalId": "8a3f248c-7d9a-443f-97fa-46d2438ab58a",
+                    "ExtraInfoRequired": false,
+                    "Name": "Radio"
+                  },
+                  {
+                    "ExternalId": "c942cee3-2235-4fab-a33a-1fd3d781b91d",
+                    "ExtraInfoRequired": true,
+                    "Name": "Recommended by Colleague"
+                  },
+                  {
+                    "ExternalId": "b4b6a513-4d8c-4c94-965c-94bbbbec99e2",
+                    "ExtraInfoRequired": false,
+                    "Name": "Recommended by Friend or Family"
+                  },
+                  {
+                    "ExternalId": "4c0318dc-4104-4a78-a644-bb4c401d67c5",
+                    "ExtraInfoRequired": true,
+                    "Name": "Website/Blog/Forum"
+                  },
+                  {
+                    "ExternalId": "30692091-7c45-43a3-af17-6f3036a50107",
+                    "ExtraInfoRequired": true,
+                    "Name": "Other..."
+                  }
+                ]
+              }
+            },
+            "headers": {}
+          }
+        },
+        "summary": "Get Acquired Items",
+        "tags": [
+          "Acquired Items/How did you hear about us"
+        ]
+      }
+    },
+    "/Countries": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "Header",
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string",
+            "default" : "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "Countries": [
+                  {
+                    "CountryId": 14,
+                    "CountryName": "Australia",
+                    "IsPopularCountry": true,
+                    "IsoCountryCode": "AU",
+                    "Nationality": "Australian"
+                  },
+                  {
+                    "CountryId": 15,
+                    "CountryName": "Austria",
+                    "IsPopularCountry": false,
+                    "IsoCountryCode": "AT",
+                    "Nationality": "Austrian"
+                  },
+                  {
+                    "CountryId": 22,
+                    "CountryName": "Belgium",
+                    "IsPopularCountry": false,
+                    "IsoCountryCode": "BE",
+                    "Nationality": "Belgian"
+                  },
+                  {
+                    "CountryId": 31,
+                    "CountryName": "Brazil",
+                    "IsPopularCountry": false,
+                    "IsoCountryCode": "BR",
+                    "Nationality": "Brazilian"
+                  }
+                ]
+              }
+            },
+            "headers": {}
+          }
+        },
+        "summary": "Countries",
+        "tags": [
+          "Countries"
+        ]
+      }
+    },
+    "/CountriesForRegistration?Brand={Brand}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "",
+            "in": "path",
+            "name": "Brand",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Header",
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string",
+            "default" : "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "Countries": [
+                  {
+                    "CountryId": 14,
+                    "CountryName": "Australia",
+                    "IsPopularCountry": true,
+                    "IsoCountryCode": "AU",
+                    "Nationality": "Australian",
+                    "TelephoneCode": 61
+                  },
+                  {
+                    "CountryId": 15,
+                    "CountryName": "Austria",
+                    "IsPopularCountry": false,
+                    "IsoCountryCode": "AT",
+                    "Nationality": "Austrian",
+                    "TelephoneCode": 43
+                  },
+                  {
+                    "CountryId": 22,
+                    "CountryName": "Belgium",
+                    "IsPopularCountry": false,
+                    "IsoCountryCode": "BE",
+                    "Nationality": "Belgian",
+                    "TelephoneCode": 32
+                  },
+                  {
+                    "CountryId": 31,
+                    "CountryName": "Brazil",
+                    "IsPopularCountry": false,
+                    "IsoCountryCode": "BR",
+                    "Nationality": "Brazilian",
+                    "TelephoneCode": 55
+                  }
+                ]
+              }
+            },
+            "headers": {}
+          }
+        },
+        "summary": "Countries Allowed For Registration",
+        "tags": [
+          "Countries"
+        ]
+      }
+    },
+    "/CountryStates?IsoCountryCode={IsoCountryCode}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "",
+            "in": "path",
+            "name": "IsoCountryCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Header",
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string",
+            "default" : "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "CountryStates": [
+                  {
+                    "Code": "ACT",
+                    "IsDefault": false,
+                    "Name": "Australian Capital Territory"
+                  },
+                  {
+                    "Code": "NSW",
+                    "IsDefault": true,
+                    "Name": "New South Wales"
+                  },
+                  {
+                    "Code": "NT",
+                    "IsDefault": false,
+                    "Name": "Northern Territory"
+                  },
+                  {
+                    "Code": "QLD",
+                    "IsDefault": false,
+                    "Name": "Queensland"
+                  },
+                  {
+                    "Code": "SA",
+                    "IsDefault": false,
+                    "Name": "South Australia"
+                  },
+                  {
+                    "Code": "TAS",
+                    "IsDefault": false,
+                    "Name": "Tasmania"
+                  },
+                  {
+                    "Code": "VIC",
+                    "IsDefault": false,
+                    "Name": "Victoria"
+                  },
+                  {
+                    "Code": "WA",
+                    "IsDefault": false,
+                    "Name": "Western Australia"
+                  }
+                ]
+              }
+            },
+            "headers": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "examples": {
+              "application/json": {
+                "ErrorCode": "Predicate",
+                "Errors": [
+                  {
+                    "ErrorCode": "Predicate",
+                    "FieldName": "IsoCountryCode",
+                    "Message": "Country not supported"
+                  }
+                ],
+                "Message": "Country not supported"
+              }
+            },
+            "headers": {}
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "examples": {
+              "application/json": {
+                "ErrorCode": "GEN:WORKER_ERROR",
+                "Message": "Worker Execute Message Error"
+              }
+            },
+            "headers": {}
+          }
+        },
+        "summary": "CountryStates",
+        "tags": [
+          "Countries"
+        ]
+      }
+    },
+    "/Currencies": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "Header",
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string",
+            "default" : "application/json"
+          }],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "Currencies": [
+                  {
+                    "Code": "XAF",
+                    "CountryName": "No Country",
+                    "IsExotic": true,
+                    "Name": "Central African CFA franc"
+                  },
+                  {
+                    "Code": "XCD",
+                    "CountryName": "No Country",
+                    "IsExotic": true,
+                    "Name": "East Caribbean Dollar"
+                  },
+                  {
+                    "Code": "AFA",
+                    "CountryName": "Afghanistan",
+                    "IsExotic": true,
+                    "Name": "Afghan Afghani"
+                  },
+                  {
+                    "Code": "AFN",
+                    "CountryName": "Afghanistan",
+                    "IsExotic": true,
+                    "Name": "Afghan Afghani"
+                  },
+                  {
+                    "Code": "ALL",
+                    "CountryName": "Albania",
+                    "IsExotic": true,
+                    "Name": "Albanian Lek"
+                  },
+                  {
+                    "Code": "DZD",
+                    "CountryName": "Algeria",
+                    "IsExotic": true,
+                    "Name": "Algerian Dinar"
+                  },
+                  {
+                    "Code": "ADF",
+                    "CountryName": "Andorra",
+                    "IsExotic": true,
+                    "Name": "Andorran Franc"
+                  },
+                  {
+                    "Code": "ADP",
+                    "CountryName": "Andorra",
+                    "IsExotic": true,
+                    "Name": "Andorran Peseta"
+                  },
+                  {
+                    "Code": "AON",
+                    "CountryName": "Angola",
+                    "IsExotic": true,
+                    "Name": "Angolan Kwanza"
+                  },
+                  {
+                    "Code": "ARS",
+                    "CountryName": "Argentina",
+                    "IsExotic": true,
+                    "Name": "Argentine Peso"
+                  },
+                  {
+                    "Code": "AMD",
+                    "CountryName": "Armenia",
+                    "IsExotic": true,
+                    "Name": "Armenian Dram"
+                  },
+                  {
+                    "Code": "AWG",
+                    "CountryName": "Aruba",
+                    "IsExotic": true,
+                    "Name": "Aruban or Dutch Guilder Rate"
+                  },
+                  {
+                    "Code": "AUD",
+                    "CountryName": "Australia",
+                    "IsExotic": false,
+                    "Name": "Australian Dollar"
+                  },
+                  {
+                    "Code": "ATS",
+                    "CountryName": "Austria",
+                    "IsExotic": true,
+                    "Name": "Austrian Schilling"
+                  },
+                  {
+                    "Code": "AZN",
+                    "CountryName": "Azerbaijan",
+                    "IsExotic": true,
+                    "Name": "Azerbaijani New Manat"
+                  },
+                  {
+                    "Code": "BSD",
+                    "CountryName": "Bahamas",
+                    "IsExotic": true,
+                    "Name": "Bahamian Dollar"
+                  },
+                  {
+                    "Code": "BHD",
+                    "CountryName": "Bahrain",
+                    "IsExotic": true,
+                    "Name": "Bahraini Dinar"
+                  },
+                  {
+                    "Code": "BDT",
+                    "CountryName": "Bangladesh",
+                    "IsExotic": true,
+                    "Name": "Bangladeshi Taka"
+                  },
+                  {
+                    "Code": "BBD",
+                    "CountryName": "Barbados",
+                    "IsExotic": true,
+                    "Name": "Barbadian or Bajan Dollar"
+                  },
+                  {
+                    "Code": "BYR",
+                    "CountryName": "Belarus",
+                    "IsExotic": true,
+                    "Name": "Belarusian Ruble"
+                  },
+                  {
+                    "Code": "BEC",
+                    "CountryName": "Belgium",
+                    "IsExotic": true,
+                    "Name": "Belgian Convertible Franc"
+                  },
+                  {
+                    "Code": "BEF",
+                    "CountryName": "Belgium",
+                    "IsExotic": true,
+                    "Name": "Belgian Franc"
+                  },
+                  {
+                    "Code": "BZD",
+                    "CountryName": "Belize",
+                    "IsExotic": true,
+                    "Name": "Belize Dollar"
+                  },
+                  {
+                    "Code": "XOF",
+                    "CountryName": "Benin",
+                    "IsExotic": true,
+                    "Name": "West African CFA Franc"
+                  },
+                  {
+                    "Code": "BMD",
+                    "CountryName": "Bermuda",
+                    "IsExotic": true,
+                    "Name": "Bermudian Dollar"
+                  },
+                  {
+                    "Code": "BTN",
+                    "CountryName": "Bhutan",
+                    "IsExotic": true,
+                    "Name": "Bhutanese Ngultrum"
+                  },
+                  {
+                    "Code": "BOB",
+                    "CountryName": "Bolivia",
+                    "IsExotic": true,
+                    "Name": "Bolivian Boliviano"
+                  },
+                  {
+                    "Code": "BAM",
+                    "CountryName": "Bosnia-Herzegovina",
+                    "IsExotic": true,
+                    "Name": "Bosnian Convertible Marka"
+                  },
+                  {
+                    "Code": "BWP",
+                    "CountryName": "Botswana",
+                    "IsExotic": true,
+                    "Name": "Botswana Pula"
+                  },
+                  {
+                    "Code": "BRL",
+                    "CountryName": "Brazil",
+                    "IsExotic": true,
+                    "Name": "Brazilian Real"
+                  },
+                  {
+                    "Code": "BND",
+                    "CountryName": "Brunei",
+                    "IsExotic": true,
+                    "Name": "Bruneian Dollar"
+                  },
+                  {
+                    "Code": "BGL",
+                    "CountryName": "Bulgaria",
+                    "IsExotic": true,
+                    "Name": "Bulgarian Old Lev"
+                  },
+                  {
+                    "Code": "BGN",
+                    "CountryName": "Bulgaria",
+                    "IsExotic": true,
+                    "Name": "Bulgarian Lev"
+                  },
+                  {
+                    "Code": "BIF",
+                    "CountryName": "Burundi",
+                    "IsExotic": true,
+                    "Name": "Burundian Franc"
+                  },
+                  {
+                    "Code": "KHR",
+                    "CountryName": "Cambodia",
+                    "IsExotic": true,
+                    "Name": "Cambodian Riel"
+                  },
+                  {
+                    "Code": "CAD",
+                    "CountryName": "Canada",
+                    "IsExotic": false,
+                    "Name": "Canadian Dollar"
+                  },
+                  {
+                    "Code": "CVE",
+                    "CountryName": "Cape Verde Islands",
+                    "IsExotic": true,
+                    "Name": "Cape Verdean Escudo"
+                  },
+                  {
+                    "Code": "KYD",
+                    "CountryName": "Cayman Islands",
+                    "IsExotic": true,
+                    "Name": "Cayman Islands Dollar"
+                  },
+                  {
+                    "Code": "CLP",
+                    "CountryName": "Chile",
+                    "IsExotic": true,
+                    "Name": "Chilean Peso"
+                  },
+                  {
+                    "Code": "CNH",
+                    "CountryName": "China",
+                    "IsExotic": true,
+                    "Name": "Chinese Offshore Renminbi"
+                  },
+                  {
+                    "Code": "CNY",
+                    "CountryName": "China",
+                    "IsExotic": true,
+                    "Name": "Chinese Yuan"
+                  },
+                  {
+                    "Code": "COP",
+                    "CountryName": "Colombia",
+                    "IsExotic": true,
+                    "Name": "Colombian Peso"
+                  },
+                  {
+                    "Code": "KMF",
+                    "CountryName": "Comoros",
+                    "IsExotic": true,
+                    "Name": "Comorian Franc"
+                  },
+                  {
+                    "Code": "CDF",
+                    "CountryName": "Congo, Republic of",
+                    "IsExotic": true,
+                    "Name": "Congolese Franc"
+                  },
+                  {
+                    "Code": "CRC",
+                    "CountryName": "Costa Rica",
+                    "IsExotic": true,
+                    "Name": "Costa Rican Col+¦n"
+                  },
+                  {
+                    "Code": "HRK",
+                    "CountryName": "Croatia",
+                    "IsExotic": true,
+                    "Name": "Croatian Kuna"
+                  },
+                  {
+                    "Code": "CUP",
+                    "CountryName": "Cuba",
+                    "IsExotic": true,
+                    "Name": "Cuban Peso"
+                  },
+                  {
+                    "Code": "CYP",
+                    "CountryName": "Cyprus",
+                    "IsExotic": true,
+                    "Name": "Cypriot Pound"
+                  },
+                  {
+                    "Code": "CZK",
+                    "CountryName": "Czech Republic",
+                    "IsExotic": true,
+                    "Name": "Czech Koruna"
+                  },
+                  {
+                    "Code": "DKK",
+                    "CountryName": "Denmark",
+                    "IsExotic": false,
+                    "Name": "Danish Krone"
+                  },
+                  {
+                    "Code": "DJF",
+                    "CountryName": "Djibouti",
+                    "IsExotic": true,
+                    "Name": "Djiboutian Franc"
+                  },
+                  {
+                    "Code": "DOP",
+                    "CountryName": "Dominica",
+                    "IsExotic": true,
+                    "Name": "Dominican Peso"
+                  },
+                  {
+                    "Code": "ECS",
+                    "CountryName": "Ecuador",
+                    "IsExotic": true,
+                    "Name": "Ecuadorian Sucre"
+                  },
+                  {
+                    "Code": "EGP",
+                    "CountryName": "Egypt",
+                    "IsExotic": true,
+                    "Name": "Egyptian Pound"
+                  },
+                  {
+                    "Code": "SVC",
+                    "CountryName": "El Salvador",
+                    "IsExotic": true,
+                    "Name": "Salvadoran Col+¦n"
+                  },
+                  {
+                    "Code": "ERN",
+                    "CountryName": "Eritrea",
+                    "IsExotic": true,
+                    "Name": "Eritrean Nakfa"
+                  },
+                  {
+                    "Code": "EEK",
+                    "CountryName": "Estonia",
+                    "IsExotic": true,
+                    "Name": "Estonian Kroon"
+                  },
+                  {
+                    "Code": "ETB",
+                    "CountryName": "Ethiopia",
+                    "IsExotic": true,
+                    "Name": "Ethiopian Birr"
+                  },
+                  {
+                    "Code": "FKP",
+                    "CountryName": "Falkland Islands (Malvinas)",
+                    "IsExotic": true,
+                    "Name": "Falkland Islands Pound"
+                  },
+                  {
+                    "Code": "FJD",
+                    "CountryName": "Fiji",
+                    "IsExotic": true,
+                    "Name": "Fijian Dollar"
+                  },
+                  {
+                    "Code": "FIM",
+                    "CountryName": "Finland",
+                    "IsExotic": true,
+                    "Name": "Finnish Markka"
+                  },
+                  {
+                    "Code": "FRF",
+                    "CountryName": "France",
+                    "IsExotic": true,
+                    "Name": "French Franc"
+                  },
+                  {
+                    "Code": "XPF",
+                    "CountryName": "French Polynesia",
+                    "IsExotic": true,
+                    "Name": "French Pacific Francs"
+                  },
+                  {
+                    "Code": "GMD",
+                    "CountryName": "Gambia",
+                    "IsExotic": true,
+                    "Name": "Gambian Dalasi"
+                  },
+                  {
+                    "Code": "GEL",
+                    "CountryName": "Georgia",
+                    "IsExotic": true,
+                    "Name": "Georgian Lari"
+                  },
+                  {
+                    "Code": "DEM",
+                    "CountryName": "Germany",
+                    "IsExotic": true,
+                    "Name": "Deutsche Mark"
+                  },
+                  {
+                    "Code": "GHC",
+                    "CountryName": "Ghana",
+                    "IsExotic": true,
+                    "Name": "Old Ghanaian Cedi"
+                  },
+                  {
+                    "Code": "GHS",
+                    "CountryName": "Ghana",
+                    "IsExotic": true,
+                    "Name": "Ghanaian Cedi"
+                  },
+                  {
+                    "Code": "GIP",
+                    "CountryName": "Gibraltar",
+                    "IsExotic": true,
+                    "Name": "Gibraltar Pound"
+                  },
+                  {
+                    "Code": "GRD",
+                    "CountryName": "Greece",
+                    "IsExotic": true,
+                    "Name": "Greek Drachma"
+                  },
+                  {
+                    "Code": "GTQ",
+                    "CountryName": "Guatemala",
+                    "IsExotic": true,
+                    "Name": "Guatemalan Quetzal"
+                  },
+                  {
+                    "Code": "GNF",
+                    "CountryName": "Guinea",
+                    "IsExotic": true,
+                    "Name": "Guinean Franc"
+                  },
+                  {
+                    "Code": "GYD",
+                    "CountryName": "Guyana",
+                    "IsExotic": true,
+                    "Name": "Guyanese Dollar"
+                  },
+                  {
+                    "Code": "HTG",
+                    "CountryName": "Haiti",
+                    "IsExotic": true,
+                    "Name": "Haitian Gourde"
+                  },
+                  {
+                    "Code": "HNL",
+                    "CountryName": "Honduras",
+                    "IsExotic": true,
+                    "Name": "Honduran Lempira"
+                  },
+                  {
+                    "Code": "HKD",
+                    "CountryName": "Hong Kong",
+                    "IsExotic": false,
+                    "Name": "Hong Kong Dollar"
+                  },
+                  {
+                    "Code": "HUF",
+                    "CountryName": "Hungary",
+                    "IsExotic": true,
+                    "Name": "Hungarian Forint"
+                  },
+                  {
+                    "Code": "ISK",
+                    "CountryName": "Iceland",
+                    "IsExotic": true,
+                    "Name": "Icelandic Krona"
+                  },
+                  {
+                    "Code": "INR",
+                    "CountryName": "India",
+                    "IsExotic": true,
+                    "Name": "Indian Rupee"
+                  },
+                  {
+                    "Code": "IDR",
+                    "CountryName": "Indonesia",
+                    "IsExotic": true,
+                    "Name": "Indonesian Rupiah"
+                  },
+                  {
+                    "Code": "IRR",
+                    "CountryName": "Iran",
+                    "IsExotic": true,
+                    "Name": "Iranian Rial"
+                  },
+                  {
+                    "Code": "IQD",
+                    "CountryName": "Iraq",
+                    "IsExotic": true,
+                    "Name": "Iraqi Dinar"
+                  },
+                  {
+                    "Code": "IEP",
+                    "CountryName": "Ireland",
+                    "IsExotic": true,
+                    "Name": "Irish Pound"
+                  },
+                  {
+                    "Code": "ILS",
+                    "CountryName": "Israel",
+                    "IsExotic": true,
+                    "Name": "Israeli New Sheqel"
+                  },
+                  {
+                    "Code": "ITL",
+                    "CountryName": "Italy",
+                    "IsExotic": true,
+                    "Name": "Italian Lira"
+                  },
+                  {
+                    "Code": "JMD",
+                    "CountryName": "Jamaica",
+                    "IsExotic": true,
+                    "Name": "Jamaican Dollar"
+                  },
+                  {
+                    "Code": "JPY",
+                    "CountryName": "Japan",
+                    "IsExotic": false,
+                    "Name": "Japanese Yen"
+                  },
+                  {
+                    "Code": "JOD",
+                    "CountryName": "Jordan",
+                    "IsExotic": true,
+                    "Name": "Jordanian Dinar"
+                  },
+                  {
+                    "Code": "KZT",
+                    "CountryName": "Kazakhstan",
+                    "IsExotic": true,
+                    "Name": "Kazakhstani Tenge"
+                  },
+                  {
+                    "Code": "KES",
+                    "CountryName": "Kenya",
+                    "IsExotic": true,
+                    "Name": "Kenyan Shilling"
+                  },
+                  {
+                    "Code": "KPW",
+                    "CountryName": "Korea, North",
+                    "IsExotic": true,
+                    "Name": "North Korean Won"
+                  },
+                  {
+                    "Code": "KRW",
+                    "CountryName": "Korea, South",
+                    "IsExotic": true,
+                    "Name": "South Korean Won"
+                  },
+                  {
+                    "Code": "KWD",
+                    "CountryName": "Kuwait",
+                    "IsExotic": true,
+                    "Name": "Kuwaiti Dinar"
+                  },
+                  {
+                    "Code": "LAK",
+                    "CountryName": "Laos",
+                    "IsExotic": true,
+                    "Name": "Laotian Kip"
+                  },
+                  {
+                    "Code": "LVL",
+                    "CountryName": "Latvia",
+                    "IsExotic": true,
+                    "Name": "Latvian Lats"
+                  },
+                  {
+                    "Code": "LBP",
+                    "CountryName": "Lebanon",
+                    "IsExotic": true,
+                    "Name": "Lebanese Pound"
+                  },
+                  {
+                    "Code": "LSL",
+                    "CountryName": "Lesotho",
+                    "IsExotic": true,
+                    "Name": "Lesotho Loti"
+                  },
+                  {
+                    "Code": "LRD",
+                    "CountryName": "Liberia",
+                    "IsExotic": true,
+                    "Name": "Liberian Dollar"
+                  },
+                  {
+                    "Code": "LYD",
+                    "CountryName": "Libya",
+                    "IsExotic": true,
+                    "Name": "Libyan Dinar"
+                  },
+                  {
+                    "Code": "LTL",
+                    "CountryName": "Lithuania",
+                    "IsExotic": true,
+                    "Name": "Lithuanian Litas"
+                  },
+                  {
+                    "Code": "LUF",
+                    "CountryName": "Luxembourg",
+                    "IsExotic": true,
+                    "Name": "Luxembourg Franc"
+                  },
+                  {
+                    "Code": "MOP",
+                    "CountryName": "Macau",
+                    "IsExotic": true,
+                    "Name": "Macanese Pataca"
+                  },
+                  {
+                    "Code": "MKD",
+                    "CountryName": "Macedonia",
+                    "IsExotic": true,
+                    "Name": "Macedonian Denar"
+                  },
+                  {
+                    "Code": "MGA",
+                    "CountryName": "Madagascar",
+                    "IsExotic": true,
+                    "Name": "Malagasy Ariary"
+                  },
+                  {
+                    "Code": "MWK",
+                    "CountryName": "Malawi",
+                    "IsExotic": true,
+                    "Name": "Malawian Kwacha"
+                  },
+                  {
+                    "Code": "MYR",
+                    "CountryName": "Malaysia",
+                    "IsExotic": true,
+                    "Name": "Malaysian Ringgit"
+                  },
+                  {
+                    "Code": "MVR",
+                    "CountryName": "Maldives",
+                    "IsExotic": true,
+                    "Name": "Maldivian Rufiyaa"
+                  },
+                  {
+                    "Code": "MGF",
+                    "CountryName": "Mali",
+                    "IsExotic": true,
+                    "Name": "Malagasy Franc"
+                  },
+                  {
+                    "Code": "MTL",
+                    "CountryName": "Malta",
+                    "IsExotic": true,
+                    "Name": "Maltese Lira"
+                  },
+                  {
+                    "Code": "MRO",
+                    "CountryName": "Mauritania",
+                    "IsExotic": true,
+                    "Name": "Mauritanian Ouguiya"
+                  },
+                  {
+                    "Code": "MUR",
+                    "CountryName": "Mauritius",
+                    "IsExotic": true,
+                    "Name": "Mauritian Rupee"
+                  },
+                  {
+                    "Code": "MXN",
+                    "CountryName": "Mexico",
+                    "IsExotic": false,
+                    "Name": "Mexican Peso"
+                  },
+                  {
+                    "Code": "MXP",
+                    "CountryName": "Mexico",
+                    "IsExotic": true,
+                    "Name": "Mexican Peso"
+                  },
+                  {
+                    "Code": "MDL",
+                    "CountryName": "Moldova",
+                    "IsExotic": true,
+                    "Name": "Moldovan Leu"
+                  },
+                  {
+                    "Code": "MNT",
+                    "CountryName": "Mongolia",
+                    "IsExotic": true,
+                    "Name": "Mongolian Tugrik"
+                  },
+                  {
+                    "Code": "MAD",
+                    "CountryName": "Morocco",
+                    "IsExotic": true,
+                    "Name": "Moroccan Dirham"
+                  },
+                  {
+                    "Code": "MZM",
+                    "CountryName": "Mozambique",
+                    "IsExotic": true,
+                    "Name": "Mozambican Metical"
+                  },
+                  {
+                    "Code": "MZN",
+                    "CountryName": "Mozambique",
+                    "IsExotic": true,
+                    "Name": "Mozambican Metical"
+                  },
+                  {
+                    "Code": "MMK",
+                    "CountryName": "Myanmar",
+                    "IsExotic": true,
+                    "Name": "Myanmar Kyat"
+                  },
+                  {
+                    "Code": "BUK",
+                    "CountryName": "Burma",
+                    "IsExotic": true,
+                    "Name": "Burmese Kyat"
+                  },
+                  {
+                    "Code": "NAD",
+                    "CountryName": "Namibia",
+                    "IsExotic": true,
+                    "Name": "Namibian Dollar"
+                  },
+                  {
+                    "Code": "NPR",
+                    "CountryName": "Nepal",
+                    "IsExotic": true,
+                    "Name": "Nepalese Rupee"
+                  },
+                  {
+                    "Code": "NLG",
+                    "CountryName": "Netherlands",
+                    "IsExotic": true,
+                    "Name": "Netherlands Guilder"
+                  },
+                  {
+                    "Code": "ANG",
+                    "CountryName": "Netherlands Antilles",
+                    "IsExotic": true,
+                    "Name": "Netherlands Antillean Guilder"
+                  },
+                  {
+                    "Code": "NZD",
+                    "CountryName": "New Zealand",
+                    "IsExotic": false,
+                    "Name": "New Zealand Dollar"
+                  },
+                  {
+                    "Code": "NIO",
+                    "CountryName": "Nicaragua",
+                    "IsExotic": true,
+                    "Name": "Nicaraguan C+¦rdoba"
+                  },
+                  {
+                    "Code": "NGN",
+                    "CountryName": "Nigeria",
+                    "IsExotic": true,
+                    "Name": "Nigerian Naira"
+                  },
+                  {
+                    "Code": "NOK",
+                    "CountryName": "Norway",
+                    "IsExotic": false,
+                    "Name": "Norwegian Krone"
+                  },
+                  {
+                    "Code": "OMR",
+                    "CountryName": "Oman",
+                    "IsExotic": true,
+                    "Name": "Omani Rial"
+                  },
+                  {
+                    "Code": "PKR",
+                    "CountryName": "Pakistan",
+                    "IsExotic": true,
+                    "Name": "Pakistani Rupee"
+                  },
+                  {
+                    "Code": "PAB",
+                    "CountryName": "Panama",
+                    "IsExotic": true,
+                    "Name": "Panamanian Balboa"
+                  },
+                  {
+                    "Code": "PGK",
+                    "CountryName": "Papua New Guinea",
+                    "IsExotic": true,
+                    "Name": "Papua New Guinean Kina"
+                  },
+                  {
+                    "Code": "PYG",
+                    "CountryName": "Paraguay",
+                    "IsExotic": true,
+                    "Name": "Paraguayan Guarani"
+                  },
+                  {
+                    "Code": "PEN",
+                    "CountryName": "Peru",
+                    "IsExotic": true,
+                    "Name": "Peruvian Nuevo Sol"
+                  },
+                  {
+                    "Code": "PHP",
+                    "CountryName": "Philippines",
+                    "IsExotic": true,
+                    "Name": "Philippine Peso"
+                  },
+                  {
+                    "Code": "PLN",
+                    "CountryName": "Poland",
+                    "IsExotic": false,
+                    "Name": "Polish Zloty"
+                  },
+                  {
+                    "Code": "PLZ",
+                    "CountryName": "Poland",
+                    "IsExotic": true,
+                    "Name": "Old Polish Zloty"
+                  },
+                  {
+                    "Code": "PTE",
+                    "CountryName": "Portugal",
+                    "IsExotic": true,
+                    "Name": "Portuguese Escudo"
+                  },
+                  {
+                    "Code": "QAR",
+                    "CountryName": "Qatar",
+                    "IsExotic": true,
+                    "Name": "Qatari Rial"
+                  },
+                  {
+                    "Code": "ROL",
+                    "CountryName": "Romania",
+                    "IsExotic": true,
+                    "Name": "Romanian Leu"
+                  },
+                  {
+                    "Code": "RUB",
+                    "CountryName": "Russian Federation",
+                    "IsExotic": true,
+                    "Name": "Russian Ruble"
+                  },
+                  {
+                    "Code": "RWF",
+                    "CountryName": "Rwanda",
+                    "IsExotic": true,
+                    "Name": "Rwandan Franc"
+                  },
+                  {
+                    "Code": "WST",
+                    "CountryName": "Samoa",
+                    "IsExotic": true,
+                    "Name": "Samoan Tala"
+                  },
+                  {
+                    "Code": "SML",
+                    "CountryName": "San Marino",
+                    "IsExotic": true,
+                    "Name": "Sammarinese Lira"
+                  },
+                  {
+                    "Code": "STD",
+                    "CountryName": "Sao Tome and Principe",
+                    "IsExotic": true,
+                    "Name": "Sao Tomean Dobra"
+                  },
+                  {
+                    "Code": "SAR",
+                    "CountryName": "Saudi Arabia",
+                    "IsExotic": true,
+                    "Name": "Saudi Arabian Riyal"
+                  },
+                  {
+                    "Code": "SCR",
+                    "CountryName": "Seychelles",
+                    "IsExotic": true,
+                    "Name": "Seychellois Rupee"
+                  },
+                  {
+                    "Code": "SLL",
+                    "CountryName": "Sierra Leone",
+                    "IsExotic": true,
+                    "Name": "Sierra Leonean Leone"
+                  },
+                  {
+                    "Code": "SGD",
+                    "CountryName": "Singapore",
+                    "IsExotic": false,
+                    "Name": "Singapore Dollar"
+                  },
+                  {
+                    "Code": "SKK",
+                    "CountryName": "Slovakia",
+                    "IsExotic": true,
+                    "Name": "Slovak Koruna"
+                  },
+                  {
+                    "Code": "SIT",
+                    "CountryName": "Slovenia",
+                    "IsExotic": true,
+                    "Name": "Slovenian Tolar"
+                  },
+                  {
+                    "Code": "SBD",
+                    "CountryName": "Solomon Islands",
+                    "IsExotic": true,
+                    "Name": "Solomon Islands Dollar"
+                  },
+                  {
+                    "Code": "SOS",
+                    "CountryName": "Somalia",
+                    "IsExotic": true,
+                    "Name": "Somali Shilling"
+                  },
+                  {
+                    "Code": "ZAR",
+                    "CountryName": "South Africa",
+                    "IsExotic": false,
+                    "Name": "South African Rand"
+                  },
+                  {
+                    "Code": "ESP",
+                    "CountryName": "Spain",
+                    "IsExotic": true,
+                    "Name": "Spanish Peseta"
+                  },
+                  {
+                    "Code": "LKR",
+                    "CountryName": "Sri Lanka",
+                    "IsExotic": true,
+                    "Name": "Sri Lankan Rupee"
+                  },
+                  {
+                    "Code": "SHP",
+                    "CountryName": "Saint Helena",
+                    "IsExotic": true,
+                    "Name": "Saint Helenian Pound"
+                  },
+                  {
+                    "Code": "SDD",
+                    "CountryName": "Sudan",
+                    "IsExotic": true,
+                    "Name": "Sudanese Dinar"
+                  },
+                  {
+                    "Code": "SDG",
+                    "CountryName": "Sudan",
+                    "IsExotic": true,
+                    "Name": "Sudanese Pound"
+                  },
+                  {
+                    "Code": "SDP",
+                    "CountryName": "Sudan",
+                    "IsExotic": true,
+                    "Name": "Sudanese Pound"
+                  },
+                  {
+                    "Code": "RON",
+                    "CountryName": "Romania",
+                    "IsExotic": true,
+                    "Name": "Romanian New Leu"
+                  },
+                  {
+                    "Code": "SRD",
+                    "CountryName": "Suriname",
+                    "IsExotic": true,
+                    "Name": "Surinamese Dollar"
+                  },
+                  {
+                    "Code": "SRG",
+                    "CountryName": "Suriname",
+                    "IsExotic": true,
+                    "Name": "Surinamese Guilder"
+                  },
+                  {
+                    "Code": "SZL",
+                    "CountryName": "Swaziland",
+                    "IsExotic": true,
+                    "Name": "Swazi Lilangeni"
+                  },
+                  {
+                    "Code": "SEK",
+                    "CountryName": "Sweden",
+                    "IsExotic": false,
+                    "Name": "Swedish Krona"
+                  },
+                  {
+                    "Code": "CHF",
+                    "CountryName": "Switzerland",
+                    "IsExotic": false,
+                    "Name": "Swiss Franc"
+                  },
+                  {
+                    "Code": "SYP",
+                    "CountryName": "Syria",
+                    "IsExotic": true,
+                    "Name": "Syrian Pound"
+                  },
+                  {
+                    "Code": "TWD",
+                    "CountryName": "Taiwan",
+                    "IsExotic": true,
+                    "Name": "Taiwan New Dollar"
+                  },
+                  {
+                    "Code": "TZS",
+                    "CountryName": "Tanzania",
+                    "IsExotic": true,
+                    "Name": "Tanzanian Shilling"
+                  },
+                  {
+                    "Code": "THB",
+                    "CountryName": "Thailand",
+                    "IsExotic": false,
+                    "Name": "Thai Baht"
+                  },
+                  {
+                    "Code": "TOP",
+                    "CountryName": "Tonga",
+                    "IsExotic": true,
+                    "Name": "Tongan Pa'anga"
+                  },
+                  {
+                    "Code": "TTD",
+                    "CountryName": "Trinidad and Tobago",
+                    "IsExotic": true,
+                    "Name": "Trinidadian Dollar"
+                  },
+                  {
+                    "Code": "TND",
+                    "CountryName": "Tunisia",
+                    "IsExotic": true,
+                    "Name": "Tunisian Dinar"
+                  },
+                  {
+                    "Code": "TRL",
+                    "CountryName": "Turkey",
+                    "IsExotic": true,
+                    "Name": "Turkish Lira"
+                  },
+                  {
+                    "Code": "TRY",
+                    "CountryName": "Turkey",
+                    "IsExotic": true,
+                    "Name": "Turkish Lira"
+                  },
+                  {
+                    "Code": "TMT",
+                    "CountryName": "Turkmenistan",
+                    "IsExotic": true,
+                    "Name": "Turkmenistani Manat"
+                  },
+                  {
+                    "Code": "UGX",
+                    "CountryName": "Uganda",
+                    "IsExotic": true,
+                    "Name": "Ugandan Shilling"
+                  },
+                  {
+                    "Code": "UAH",
+                    "CountryName": "Ukraine",
+                    "IsExotic": true,
+                    "Name": "Ukrainian Hryvnia"
+                  },
+                  {
+                    "Code": "AED",
+                    "CountryName": "United Arab Emirates",
+                    "IsExotic": false,
+                    "Name": "United Arab Emirates Dirham"
+                  },
+                  {
+                    "Code": "GBP",
+                    "CountryName": "United Kingdom",
+                    "IsExotic": false,
+                    "Name": "British Pound"
+                  },
+                  {
+                    "Code": "USD",
+                    "CountryName": "United States of America",
+                    "IsExotic": false,
+                    "Name": "US Dollar"
+                  },
+                  {
+                    "Code": "UYU",
+                    "CountryName": "Uruguay",
+                    "IsExotic": true,
+                    "Name": "Uruguayan Peso"
+                  },
+                  {
+                    "Code": "UZS",
+                    "CountryName": "Uzbekistan",
+                    "IsExotic": true,
+                    "Name": "Uzbekistani Som"
+                  },
+                  {
+                    "Code": "VUV",
+                    "CountryName": "Vanuatu",
+                    "IsExotic": true,
+                    "Name": "Vanuatu Vatu"
+                  },
+                  {
+                    "Code": "VAL",
+                    "CountryName": "Vatican City State (Holy See)",
+                    "IsExotic": true,
+                    "Name": "Vatican City Lira"
+                  },
+                  {
+                    "Code": "VEB",
+                    "CountryName": "Venezuela",
+                    "IsExotic": true,
+                    "Name": "Venezuelan Bolivar"
+                  },
+                  {
+                    "Code": "VEF",
+                    "CountryName": "Venezuela",
+                    "IsExotic": true,
+                    "Name": "Venezuelan Bolivar"
+                  },
+                  {
+                    "Code": "VND",
+                    "CountryName": "Vietnam",
+                    "IsExotic": true,
+                    "Name": "Vietnamese Dong"
+                  },
+                  {
+                    "Code": "YER",
+                    "CountryName": "Yemen",
+                    "IsExotic": true,
+                    "Name": "Yemeni Rial"
+                  },
+                  {
+                    "Code": "YUM",
+                    "CountryName": "Serbia and Montenegro",
+                    "IsExotic": true,
+                    "Name": "Yugoslavian Dinar"
+                  },
+                  {
+                    "Code": "ZRN",
+                    "CountryName": "Congo, Democratic Republic of",
+                    "IsExotic": true,
+                    "Name": "New Zaire"
+                  },
+                  {
+                    "Code": "ZMK",
+                    "CountryName": "Zambia",
+                    "IsExotic": true,
+                    "Name": "Zambian Kwacha"
+                  },
+                  {
+                    "Code": "ZWD",
+                    "CountryName": "Zimbabwe",
+                    "IsExotic": true,
+                    "Name": "Zimbabwean Dollar"
+                  },
+                  {
+                    "Code": "RHD",
+                    "CountryName": "Rhodesia",
+                    "IsExotic": true,
+                    "Name": "Rhodesian Dollar"
+                  },
+                  {
+                    "Code": "EUR",
+                    "CountryName": "European Union",
+                    "IsExotic": false,
+                    "Name": "Euro"
+                  },
+                  {
+                    "Code": "JEP",
+                    "CountryName": "Jersey",
+                    "IsExotic": true,
+                    "Name": "Jersey Pound"
+                  },
+                  {
+                    "Code": "RSD",
+                    "CountryName": "Serbia",
+                    "IsExotic": true,
+                    "Name": "Serbian Dinar"
+                  }
+                ]
+              }
+            },
+            "headers": {}
+          }
+        },
+        "summary": "Currencies Request",
+        "tags": [
+          "Currencies"
+        ]
+      }
+    },
+    "/NearestDealingDate?InitialUtcDateTime={InitialUtcDateTime}&Currency={Currency}&System={System}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "",
+            "in": "path",
+            "name": "InitialUtcDateTime",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "",
+            "in": "path",
+            "name": "System",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "",
+            "in": "path",
+            "name": "Currency",
+            "required": true,
+            "type": "string"
+          }, 
+          {
+            "description": "Header",
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string",
+            "default" : "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "DealingDate": "2016-6-6"
+              }
+            },
+            "headers": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "examples": {
+              "application/json": {
+                "ErrorCode": "GEN:TLB",
+                "Errors": [],
+                "Message": "Throttle Limit Breached"
+              }
+            },
+            "headers": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "examples": {
+              "application/json": {
+                "ErrorCode": "RF:GetNearestCurrencyDealingDateInSydneyTimeZone:0006",
+                "Errors": [],
+                "Message": "{System} system was not found"
+              }
+            },
+            "headers": {}
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "examples": {
+              "application/json": {
+                "ErrorCode": "GEN:UNKNOWN",
+                "Errors": [],
+                "Message": "Uncaught Exception Handler Error"
+              }
+            },
+            "headers": {}
+          }
+        },
+        "summary": "Nearest Dealing Date In Sydney Time Zone Request",
+        "tags": [
+          "Dealing Date"
+        ]
+      }
+    },
+    "/SecurityQuestions": {
+      "get": {
+        "description": "",
+        "parameters": [ 
+          {
+            "description": "Header",
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string",
+            "default" : "application/json"
+          }],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "SecurityQuestions": [
+                  {
+                    "ExternalId": "8c4e4db4-8b82-4662-b70b-1fdfaadf4956",
+                    "Question": "Father's city of birth"
+                  },
+                  {
+                    "ExternalId": "4c8cb21c-f34a-4980-80b0-2830f147199a",
+                    "Question": "Partner's middle name"
+                  },
+                  {
+                    "ExternalId": "a3fa036c-cf3e-45de-9d6a-2b1dbbbba190",
+                    "Question": "First pet's name"
+                  },
+                  {
+                    "ExternalId": "9bc8ddf1-5df8-4a6b-b2fa-770c1da02778",
+                    "Question": "Suburb grandparents live"
+                  },
+                  {
+                    "ExternalId": "a04396a1-4d51-4dcd-bfb2-817ee2dc4fd1",
+                    "Question": "Model of your first car"
+                  },
+                  {
+                    "ExternalId": "abc2e017-a868-47ae-9f67-88b60c3f5023",
+                    "Question": "Mother's maiden name"
+                  },
+                  {
+                    "ExternalId": "2bc7402e-4a86-4cb4-92be-ca6ae4198240",
+                    "Question": "First school you attended"
+                  },
+                  {
+                    "ExternalId": "4845bbf1-7a88-497b-b6bb-cc060bcf1c8e",
+                    "Question": "City/Town born in"
+                  },
+                  {
+                    "ExternalId": "cc11e373-6345-44f5-91f5-f0682410253d",
+                    "Question": "Street where you grew up"
+                  }
+                ]
+              }
+            },
+            "headers": {}
+          }
+        },
+        "summary": "Get Security Questions",
+        "tags": [
+          "Security Questions"
+        ]
+      }
+    },
+    "/TradedCurrencies": {
+      "get": {
+        "description": "",
+        "parameters": [  {
+            "description": "Header",
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string",
+            "default" : "application/json"
+          }
+          ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "Currencies": [
+                  {
+                    "Code": "XCD",
+                    "CountryName": "No Country",
+                    "IsExotic": true,
+                    "Name": "East Caribbean Dollar"
+                  },
+                  {
+                    "Code": "AFA",
+                    "CountryName": "Afghanistan",
+                    "IsExotic": true,
+                    "Name": "Afghan Afghani"
+                  },
+                  {
+                    "Code": "AFN",
+                    "CountryName": "Afghanistan",
+                    "IsExotic": true,
+                    "Name": "Afghan Afghani"
+                  },
+                  {
+                    "Code": "ALL",
+                    "CountryName": "Albania",
+                    "IsExotic": true,
+                    "Name": "Albanian Lek"
+                  },
+                  {
+                    "Code": "DZD",
+                    "CountryName": "Algeria",
+                    "IsExotic": true,
+                    "Name": "Algerian Dinar"
+                  },
+                  {
+                    "Code": "ADF",
+                    "CountryName": "Andorra",
+                    "IsExotic": true,
+                    "Name": "Andorran Franc"
+                  },
+                  {
+                    "Code": "ADP",
+                    "CountryName": "Andorra",
+                    "IsExotic": true,
+                    "Name": "Andorran Peseta"
+                  }
+                ]
+              }
+            },
+            "headers": {}
+          }
+        },
+        "summary": "Traded Currencies Request",
+        "tags": [
+          "Currencies"
+        ]
+      }
+    },
+    "/TryConvertToDealingDate?Currency={Currency}&UtcDateTime={UtcDateTime}&System={System}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "",
+            "in": "path",
+            "name": "UtcDateTime",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "",
+            "in": "path",
+            "name": "System",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "",
+            "in": "path",
+            "name": "Currency",
+            "required": true,
+            "type": "string"
+          },  
+          {
+            "description": "Header",
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string",
+            "default" : "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "DealingDate": "2016-6-6"
+              }
+            },
+            "headers": {}
+          },
+          "401": {
+            "description": "Unauthorized",
+            "examples": {
+              "application/json": {
+                "ErrorCode": "GEN:TLB",
+                "Errors": [],
+                "Message": "Throttle Limit Breached"
+              }
+            },
+            "headers": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "examples": {
+              "application/json": {
+                "ErrorCode": "RF:TryConvertToDealingDateInSydneyTimeZone:0006",
+                "Errors": [],
+                "Message": "Invalid dealing date in {System} for {Currency}"
+              }
+            },
+            "headers": {}
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "examples": {
+              "application/json": {
+                "ErrorCode": "GEN:UNKNOWN",
+                "Errors": [],
+                "Message": "Uncaught Exception Handler Error"
+              }
+            },
+            "headers": {}
+          }
+        },
+        "summary": "Try Convert To Dealing Date In Sydney Time Zone Request",
+        "tags": [
+          "Dealing Date"
+        ]
+      }
+    },
+    "/brand/{CountryCode}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "",
+            "in": "path",
+            "name": "CountryCode",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Header",
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string",
+            "default" : "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "Brand": "OFX-AU"
+              }
+            },
+            "headers": {}
+          },
+          "403": {
+            "description": "Forbidden",
+            "examples": {
+              "application/json": {
+                "ErrorCode": "RF:BrandByCountry:0001",
+                "Errors": [],
+                "Message": "Country not supported"
+              }
+            },
+            "headers": {}
+          }
+        },
+        "summary": "Get Brand By Country",
+        "tags": [
+          "Brand"
+        ]
+      }
+    },
+    "/template/address/{Country}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "description": "",
+            "in": "path",
+            "name": "Country",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Header",
+            "in": "header",
+            "name": "Content-Type",
+            "required": true,
+            "type": "string",
+            "default" : "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "examples": {
+              "application/json": {
+                "AddressProperties": [
+                  {
+                    "displayLabel": "Unit number",
+                    "elementType": "Text",
+                    "fieldName": "UnitNumber",
+                    "maxLength": 5,
+                    "minLength": 1,
+                    "required": false
+                  },
+                  {
+                    "displayLabel": "Unit type",
+                    "elementType": "Select",
+                    "fieldName": "UnitType",
+                    "options": [
+                      "Unit",
+                      "Appartment",
+                      "Condo"
+                    ],
+                    "required": false
+                  },
+                  {
+                    "displayLabel": "Street type",
+                    "elementType": "Select",
+                    "fieldName": "StreetType",
+                    "options": [
+                      "Street",
+                      "Road",
+                      "Lane"
+                    ],
+                    "required": true,
+                    "requiredErrorMessage": "Street type is required"
+                  },
+                  {
+                    "displayLabel": "Street number",
+                    "elementType": "Text",
+                    "fieldName": "StreetNumber",
+                    "regularExpression": "[0-9](+)",
+                    "regularExpressionMessage": "Unit Number must be a number",
+                    "required": true,
+                    "requiredMessage": "Street number is required"
+                  },
+                  {
+                    "displayLabel": "Street name",
+                    "elementType": "Text",
+                    "fieldName": "StreetName",
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "required": true,
+                    "requiredErrorMessage": "Street name is required"
+                  },
+                  {
+                    "displayLabel": "City or suburb",
+                    "elementType": "Text",
+                    "fieldName": "CitySuburb",
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "required": true
+                  },
+                  {
+                    "displayLabel": "Postcode/ZIP",
+                    "elementType": "Text",
+                    "fieldName": "PostCode",
+                    "regularExpression": "[0-9](4)",
+                    "regularExpressionMessage": "Postcode must be a 4 numbers long",
+                    "required": true
+                  },
+                  {
+                    "displayLabel": "State",
+                    "elementType": "Select",
+                    "fieldName": "StateProvince",
+                    "options": [
+                      "NSW",
+                      "QLD",
+                      "SA"
+                    ],
+                    "required": true
+                  }
+                ]
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "Bad Request",
+            "examples": {
+              "application/json": {
+                "ResponseStatus": {
+                  "ErrorCode": "Predicate",
+                  "Errors": [
+                    {
+                      "ErrorCode": "Predicate",
+                      "FieldName": "Country",
+                      "Message": "Unsupported Country"
+                    }
+                  ],
+                  "Message": "Unsupported Country"
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "summary": "Get Fields for manual entry",
+        "tags": [
+          "Address"
+        ]
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "swagger": "2.0"
+}
