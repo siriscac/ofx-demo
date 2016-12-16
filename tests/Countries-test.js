@@ -11,7 +11,7 @@ describe('/Countries', function() {
 	  this.timeout(0);
       api.get('/RefData.ApiService/Countries')
       .set('Content-Type', 'application/json')
-      .expect(200)
+      .expect(400)
       .end(function(err, res) {
         if (err) return done(err);
         done();
