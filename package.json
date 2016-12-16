@@ -10,6 +10,7 @@
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "supertest": "^2.0.1",
+    "yamljs": "^0.2.8",
     "z-schema": "^3.18.2"
   },
   "devDependencies": {
