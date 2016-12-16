@@ -30,27 +30,9 @@
       <Request/>
       <Response/>
     </Flow>
-    <Flow name="GET /Currencies">
-      <Condition>(proxy.pathsuffix MatchesPath &quot;/Currencies&quot;) and (request.verb = &quot;GET&quot;)</Condition>
-      <Description>Currencies Request</Description>
-      <Request/>
-      <Response/>
-    </Flow>
-    <Flow name="GET /NearestDealingDate?InitialUtcDateTime={InitialUtcDateTime}&amp;Currency={Currency}&amp;System={System}">
-      <Condition>(proxy.pathsuffix MatchesPath &quot;/NearestDealingDate?InitialUtcDateTime={InitialUtcDateTime}&Currency={Currency}&System={System}&quot;) and (request.verb = &quot;GET&quot;)</Condition>
-      <Description>Nearest Dealing Date In Sydney Time Zone Request</Description>
-      <Request/>
-      <Response/>
-    </Flow>
     <Flow name="GET /SecurityQuestions">
       <Condition>(proxy.pathsuffix MatchesPath &quot;/SecurityQuestions&quot;) and (request.verb = &quot;GET&quot;)</Condition>
       <Description>Get Security Questions</Description>
-      <Request/>
-      <Response/>
-    </Flow>
-    <Flow name="GET /TradedCurrencies">
-      <Condition>(proxy.pathsuffix MatchesPath &quot;/TradedCurrencies&quot;) and (request.verb = &quot;GET&quot;)</Condition>
-      <Description>Traded Currencies Request</Description>
       <Request/>
       <Response/>
     </Flow>
